@@ -1,0 +1,43 @@
+@media screen and (width <= 1024px) {
+    .FAQ {
+        .Wrapper {
+            .Content {
+                .Header {
+                    h2 {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (width <= 768px) {
+    .FAQ {
+        .Wrapper {
+            grid-template-columns: 1fr;
+            .Content {
+                .Header {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+@media screen and (width <= 540px) {
+    .FAQ {
+        .Wrapper {
+            .Content {
+                .Header {
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (width <= 500px) {
+    .FAQ {
+        padding: 50px 0px;
+    }
+}

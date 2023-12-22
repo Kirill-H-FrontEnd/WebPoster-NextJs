@@ -1,0 +1,60 @@
+.Hero {
+    padding: 200px 0px;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    .Wrapper {
+        .Content {
+            text-align: center;
+            h2 {
+                line-height: 1;
+                font-size: 19px;
+                font-weight: 400;
+                div {
+                    display: inline-block;
+                    span {
+                        background: -webkit-linear-gradient(315deg, #2c74b3 25%, #42d392);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+            }
+            h1 {
+                padding: 20px 0px;
+                line-height: 1;
+                font-size: 90px;
+                font-weight: 700;
+            }
+            p {
+                margin: 0 auto;
+                max-width: 700px;
+                font-weight: 300;
+                font-size: 16px;
+            }
+            .Actions {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                justify-content: center;
+                align-items: center;
+                grid-column-gap: 10px;
+                margin-top: 20px;
+                button {
+                    &:nth-of-type(2) {
+                        svg {
+                            transform: translate(-3px, 0px);
+                            transition: transform 0.2s ease;
+                        }
+                        &:hover {
+                            svg {
+                                transform: translate(0px, 0px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// ! Media
+@import "Hero.media";

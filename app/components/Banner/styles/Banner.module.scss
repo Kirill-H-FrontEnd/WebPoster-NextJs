@@ -1,0 +1,11 @@
+.Banner {
+    background: -webkit-linear-gradient(315deg, #2c74b3 25%, #42d392);
+    position: relative;
+    button {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translate(0, -50%);
+        border-radius: 50%;
+    }
+}

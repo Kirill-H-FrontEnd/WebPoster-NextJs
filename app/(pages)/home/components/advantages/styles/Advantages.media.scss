@@ -1,0 +1,40 @@
+@media screen and (width <= 1024px) {
+    .Advantages {
+        .Wrapper {
+            .Header {
+                text-align: center;
+                margin: 0 auto;
+                h2 {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+@media screen and (width <= 540px) {
+    .Advantages {
+        .Wrapper {
+            .Header {
+                p {
+                    font-size: 14px;
+                }
+            }
+            .Content {
+                .Card {
+                    padding: 15px;
+                    h3 {
+                        font-size: 22px;
+                    }
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (width <= 500px) {
+    .Advantages {
+        padding: 50px 0px;
+    }
+}

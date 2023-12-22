@@ -1,0 +1,117 @@
+.Footer {
+    .Wrapper {
+        .Content {
+            padding: 50px 0px;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-column-gap: 60px;
+            h5 {
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            .Logo {
+                line-height: 1;
+                transition: opacity 0.1s ease;
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                justify-content: start;
+                align-items: center;
+                height: 0;
+                grid-column-gap: 5px;
+                &:hover {
+                    opacity: 0.8;
+                }
+                span {
+                    font-size: 26px;
+                    font-weight: 300;
+                    background: -webkit-linear-gradient(315deg, #2c74b3 25%, #42d392);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+            .Actions {
+                display: grid;
+                grid-template-columns: repeat(4, auto);
+                grid-column-gap: 80px;
+                li {
+                    div {
+                        display: grid;
+                        grid-row-gap: 10px;
+                        a {
+                            font-size: 14px;
+                            font-weight: 400;
+                            transition: all 0.2s ease;
+                            &:hover {
+                                transform: translate(2px, 0px);
+                            }
+                        }
+                    }
+                }
+            }
+            .Subscribe {
+                form {
+                    position: relative;
+                    button {
+                        width: 100%;
+                        padding: 5px 0px;
+                        border-radius: 8px;
+                        font-size: 14px;
+                        margin-top: 10px;
+                    }
+                }
+                p {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+                .Social {
+                    display: grid;
+                    grid-template-columns: repeat(3, auto);
+                    justify-content: start;
+                    grid-column-gap: 10px;
+                    margin-top: 10px;
+                    a {
+                        width: 30px;
+                        height: 30px;
+                        position: relative;
+                        border-radius: 50%;
+                        &:nth-of-type(1) {
+                            background-color: #24292f;
+                            svg {
+                                color: white;
+                            }
+                        }
+                        &:nth-of-type(2) {
+                            background-color: #007ab9;
+                            svg {
+                                color: white;
+                            }
+                        }
+                        &:nth-of-type(3) {
+                            background-color: #2ba5da;
+                            svg {
+                                color: white;
+                            }
+                        }
+                        svg {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .Copyright {
+        text-align: center;
+        padding: 8px 0px;
+        div {
+            font-size: 13px;
+        }
+    }
+}
+// ! Media
+@import "Footer.media";

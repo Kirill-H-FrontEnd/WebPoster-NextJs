@@ -1,0 +1,113 @@
+.Prices {
+    padding: 100px 0px;
+    .Wrapper {
+        .Header {
+            text-align: center;
+            h3 {
+                font-weight: 400;
+            }
+            h2 {
+                font-size: 35px;
+                font-weight: 600;
+            }
+            p {
+                font-weight: 400;
+            }
+        }
+        .Cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            .Card {
+                padding: 40px 40px;
+                h5 {
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+                h4 {
+                    font-size: 40px;
+                    font-weight: 600;
+                    margin: 5px 0px;
+                }
+                p {
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+                .Features {
+                    display: grid;
+                    grid-row-gap: 15px;
+                    margin: 20px 0px;
+                    li {
+                        display: grid;
+                        grid-template-columns: repeat(2, auto);
+                        justify-content: start;
+                        align-items: center;
+                        grid-column-gap: 10px;
+                        p {
+                            font-weight: 600;
+                        }
+                    }
+                }
+                button {
+                    text-transform: capitalize;
+                }
+            }
+        }
+        .Integrations {
+            display: grid;
+            text-align: center;
+            margin-top: 50px;
+            h4 {
+                margin-bottom: 20px;
+                font-weight: 400;
+                font-size: 14px;
+            }
+            .marquee {
+                .introMarquee {
+                    width: 100%;
+                    display: grid;
+                    overflow: hidden;
+                    grid-template-columns: repeat(6, 1fr);
+                    div {
+                        margin-right: 100px;
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    }
+}
+// ! Media
+@media screen and (width <= 1024px) {
+    .Prices {
+        .Wrapper {
+            .Header {
+                h2 {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+@media screen and (width <= 540px) {
+    .Prices {
+        .Wrapper {
+            .Header {
+                p {
+                    font-size: 14px;
+                }
+            }
+            .Cards {
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@media screen and (width <= 500px) {
+    .Prices {
+        padding: 50px 0px;
+    }
+}

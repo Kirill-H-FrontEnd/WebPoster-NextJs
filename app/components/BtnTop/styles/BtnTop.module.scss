@@ -1,0 +1,36 @@
+.BtnTop {
+    background: -webkit-linear-gradient(300deg, #2c74b3 25%, #42d392);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+    &.Active {
+        opacity: 1;
+        animation: pulse-animation 1.5s ease forwards infinite;
+    }
+    &:active {
+        animation: ClickAnimation 0.2s ease forwards;
+    }
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+// ! Key Frames
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba($color: #2c74b3, $alpha: 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0 15px rgba($color: #2c74b3, $alpha: 0);
+    }
+}
+@keyframes ClickAnimation {
+    from {
+        transform: scale(0.8, 0.8);
+    }
+    to {
+        transform: scale(1, 1);
+    }
+}

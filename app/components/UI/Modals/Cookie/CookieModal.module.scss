@@ -1,0 +1,33 @@
+.CookieModal {
+    width: 500px;
+    z-index: 200;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0px, 200px);
+    animation: CookieModal 0.5s ease forwards 5s;
+    section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+    }
+}
+// ! Media
+@media screen and (width <= 768px) {
+    .CookieModal {
+        width: 100%;
+    }
+}
+
+// ! KeyFrames
+@keyframes CookieModal {
+    from {
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(0px, 100px);
+    }
+    to {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}

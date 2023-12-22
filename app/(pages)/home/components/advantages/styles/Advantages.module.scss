@@ -1,0 +1,54 @@
+.Advantages {
+    padding: 100px 0px;
+    position: relative;
+    .Wrapper {
+        .Header {
+            max-width: 750px;
+            h3 {
+                font-weight: 400;
+            }
+            h2 {
+                font-size: 35px;
+                font-weight: 600;
+            }
+            p {
+                font-weight: 400;
+            }
+        }
+        .Content {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            justify-content: center;
+            grid-gap: 30px;
+            .Card {
+                padding: 30px;
+                position: relative;
+                border-radius: 8px;
+                div {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    position: relative;
+                    background: -webkit-linear-gradient(300deg, #2c74b3 25%, #42d392);
+                    svg {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                h3 {
+                    margin: 10px 0px;
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+                p {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+// ! Media
+@import "Advantages.media";

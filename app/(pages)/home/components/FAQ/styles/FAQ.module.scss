@@ -1,0 +1,41 @@
+.FAQ {
+    padding: 100px 0px;
+    .Wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        grid-gap: 50px;
+        .Content {
+            .Header {
+                h3 {
+                    font-weight: 400;
+                }
+                h2 {
+                    font-size: 35px;
+                    font-weight: 600;
+                }
+                p {
+                    font-weight: 400;
+                }
+            }
+        }
+        .Image {
+            img {
+                width: 100%;
+                height: 0 auto;
+            }
+        }
+        .Accordion {
+            display: grid;
+            grid-gap: 15px;
+            .AccordionItem {
+                border-radius: 10px;
+            }
+            hr {
+                display: none;
+            }
+        }
+    }
+}
+// ! Media
+@import "FAQ.media";

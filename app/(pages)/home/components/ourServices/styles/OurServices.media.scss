@@ -1,0 +1,53 @@
+@media screen and (width <= 1024px) {
+    .OurServices {
+        .Wrapper {
+            .Header {
+                h2 {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+@media screen and (width <= 768px) {
+    .OurServices {
+        .Wrapper {
+            .Content {
+                .Tab {
+                    grid-template-columns: 1fr;
+                    article {
+                        div {
+                            h3 {
+                                font-size: 22px;
+                            }
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                        ul {
+                            li {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (width <= 540px) {
+    .OurServices {
+        .Wrapper {
+            .Header {
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+@media screen and (width <= 500px) {
+    .OurServices {
+        padding: 50px 0px;
+    }
+}

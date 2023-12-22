@@ -1,0 +1,41 @@
+@media screen and (width <= 1024px) {
+    .HowWeWork {
+        .Wrapper {
+            .Content {
+                h2 {
+                    font-size: 30px;
+                }
+                .List {
+                    li {
+                        h4 {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (width <= 768px) {
+    .HowWeWork {
+        .Wrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+@media screen and (width <= 540px) {
+    .HowWeWork {
+        .Wrapper {
+            .Content {
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+@media screen and (width <= 540px) {
+    .HowWeWork {
+        padding: 50px 0px;
+    }
+}

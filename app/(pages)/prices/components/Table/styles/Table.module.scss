@@ -1,0 +1,14 @@
+.TableWrapper {
+    padding: 100px 20px;
+}
+// ! Media
+@media screen and (width <= 768px) {
+    .TableWrapper {
+        display: none;
+    }
+}
+@media screen and (width <= 540px) {
+    .TableWrapper {
+        padding: 50px 20px;
+    }
+}

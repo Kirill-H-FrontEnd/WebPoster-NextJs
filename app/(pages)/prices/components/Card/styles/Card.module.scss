@@ -1,0 +1,40 @@
+.CardsWrapper {
+    display: none;
+    padding: 100px 0px;
+    .Cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+
+        .Card {
+            border-radius: 8px;
+            padding: 40px 40px;
+            .CardsHeader {
+                h5 {
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+                h4 {
+                    font-size: 40px;
+                    font-weight: 600;
+                    margin: 5px 0px;
+                }
+                p {
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+// ! Media
+@media screen and (width <= 768px) {
+    .CardsWrapper {
+        display: block;
+    }
+}
+@media screen and (width <= 540px) {
+    .CardsWrapper {
+        padding: 50px 0px;
+    }
+}

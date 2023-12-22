@@ -1,0 +1,19 @@
+@media screen and (width <= 768px) {
+    .Header {
+        .Burger {
+            display: block;
+        }
+        .Wrapper {
+            .Nav {
+                grid-column-gap: 10px;
+                grid-template-columns: repeat(2, auto);
+                .Button {
+                    display: none;
+                }
+                ul {
+                    display: none;
+                }
+            }
+        }
+    }
+}

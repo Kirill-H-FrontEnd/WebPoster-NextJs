@@ -1,0 +1,129 @@
+.Header {
+    z-index: 1000;
+    header {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .Burger {
+        display: none;
+    }
+    .Wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        align-items: center;
+        justify-content: space-between;
+        .Logo {
+            transition: opacity 0.1s ease;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            align-items: center;
+            grid-column-gap: 5px;
+            &:hover {
+                opacity: 0.8;
+            }
+            span {
+                font-size: 24px;
+                font-weight: 300;
+                background: -webkit-linear-gradient(315deg, #2c74b3 25%, #42d392);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        .Nav {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            justify-content: center;
+            align-items: center;
+            .Button {
+                margin: 0px 20px 0px 30px;
+                font-size: 13px;
+                &:active {
+                    box-shadow: inset 0px 0px 6px rgba($color: #1a1a1a, $alpha: 0.2);
+                }
+            }
+            ul {
+                display: grid;
+                grid-template-columns: repeat(4, auto);
+                grid-column-gap: 30px;
+                li {
+                    a {
+                        transition: color 0.1s ease;
+                        font-weight: 500;
+                        font-size: 13px;
+                        display: block;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            transition: all 0.2s ease;
+                            position: absolute;
+                            top: 50%;
+                            left: -15px;
+                            transform: translate(-0%, -50%);
+                            width: 5px;
+                            height: 5px;
+                            border-radius: 50%;
+                            opacity: 0;
+                            background-color: #42d392;
+                        }
+                        &.active {
+                            &::after {
+                                opacity: 1;
+                                left: -10px;
+                            }
+                        }
+                        &:hover {
+                            &::after {
+                                left: -10px;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            .Actions {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                width: 80px;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 1px;
+                    height: 50%;
+                    background-color: rgba($color: #cbd5e1, $alpha: 1);
+                }
+                .Social,
+                .SwitchTheme {
+                    cursor: pointer;
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 50%;
+                    position: relative;
+                    transition: background-color 0.1s ease;
+                    svg {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                .SwitchTheme {
+                    svg {
+                        animation: SwitchThemeAnimation 0.2s ease forwards;
+                    }
+                }
+            }
+        }
+        .navBarMenu {
+            background-color: red;
+        }
+    }
+}
+// ! Media
+@import "Header.media";
