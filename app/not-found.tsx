@@ -13,18 +13,6 @@ import { motion } from "framer-motion";
 import { TitleBannerPage } from "./components/TitleBannerPage/TitleBannerPage";
 
 export default function NotFoundPage() {
-  // Animation
-  const animation = {
-    hidden: {
-      y: 30,
-      opacity: 0,
-    },
-    visible: (custom: number) => ({
-      y: 0,
-      opacity: 1,
-      transition: { delay: custom * 0.2, duration: 0.3, ease: "easeOut" },
-    }),
-  };
   const DATA_CARDS = [
     {
       title: "Home",
@@ -66,7 +54,7 @@ export default function NotFoundPage() {
       />
       <motion.section className="py-16 bg-white dark:bg-black">
         <div className="container">
-          <section className="grid  md:grid-cols-5 gap-4">
+          <section className="grid md:grid-cols-5 gap-4">
             {DATA_CARDS.map((card, i) => (
               <Link
                 key={i}
