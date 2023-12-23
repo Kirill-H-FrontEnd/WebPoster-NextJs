@@ -270,10 +270,10 @@ export const Header: FC = ({}) => {
                       {item.links.map((link, i) => (
                         <Link
                           onClick={() => setIsMenuOpen(false)}
-                          className={`relative text-sm  ml-2 pl-3 before:block before:absolute before:w-1 before:h-1 before:bg-gray/30 before:top-2 before:left-0 before:rounded-full ${
+                          className={`relative text-sm  ml-2 pl-3 before:block before:absolute before:w-1 before:h-1 before:top-2 before:left-0 before:rounded-full ${
                             pathName === link.href
                               ? `text-blue dark:text-green before:bg-blue dark:before:bg-green `
-                              : "text-gray "
+                              : "before:bg-gray/30 text-gray "
                           }`}
                           key={i}
                           href={link.href}
