@@ -8,7 +8,7 @@
             text-align: center;
             h2 {
                 line-height: 1;
-                font-size: 19px;
+                font-size: clamp(10px, 2vw, 19px);
                 font-weight: 400;
                 div {
                     display: inline-block;
@@ -23,14 +23,14 @@
             h1 {
                 padding: 20px 0px;
                 line-height: 1;
-                font-size: 90px;
+                font-size: clamp(30px, 10vw, 80px);
                 font-weight: 700;
             }
             p {
                 margin: 0 auto;
                 max-width: 700px;
                 font-weight: 300;
-                font-size: 16px;
+                font-size: clamp(14px, 2vw, 16px);
             }
             .Actions {
                 display: grid;
