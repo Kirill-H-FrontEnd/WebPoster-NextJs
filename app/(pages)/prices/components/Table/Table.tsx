@@ -13,7 +13,6 @@ import {
   TableRow,
   TableCell,
 } from "@nextui-org/react";
-type TCards = {};
 
 export const Table: FC = ({}) => {
   const DATA_TABLE_HEADER = [

@@ -93,14 +93,13 @@ export const Additions: FC = ({}) => {
           </motion.section>
           <section className={s.Cards}>
             {DATA_CARDS.map((card, i) => (
-              <Atropos shadow={false} className="bg-transparent">
+              <Atropos key={i} shadow={false} className="bg-transparent">
                 <motion.article
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ amount: "some", once: true }}
                   variants={animation}
                   custom={i}
-                  key={i}
                   className={`${s.Card} shadow-sm border-1 border-gray/10 bg-gray_light/30 dark:bg-black_secondary`}
                 >
                   <div className={s.icon}>

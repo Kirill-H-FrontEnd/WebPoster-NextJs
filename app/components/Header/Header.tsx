@@ -259,12 +259,18 @@ export const Header: FC = ({}) => {
             >
               <Accordion isCompact className={s.Accordion}>
                 {DATA_TOGGLE_MENU_LINKS.map((item, i) => (
-                  <AccordionItem key={i} title={item.title}>
+                  <AccordionItem
+                    key={i}
+                    title={item.title}
+                    classNames={{
+                      title: "text-black dark:text-white ",
+                    }}
+                  >
                     <NavbarMenuItem className="grid gap-3" key={`${item}-${i}`}>
                       {item.links.map((link, i) => (
                         <Link
                           onClick={() => setIsMenuOpen(false)}
-                          className={`relative  text-sm ml-2 pl-3 before:block before:absolute before:w-1 before:h-1 before:bg-gray/30 before:top-2 before:left-0 before:rounded-full ${
+                          className={`relative text-sm  ml-2 pl-3 before:block before:absolute before:w-1 before:h-1 before:bg-gray/30 before:top-2 before:left-0 before:rounded-full ${
                             pathName === link.href
                               ? `text-blue dark:text-green before:bg-blue dark:before:bg-green `
                               : "text-gray "

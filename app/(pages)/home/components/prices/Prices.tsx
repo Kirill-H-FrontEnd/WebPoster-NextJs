@@ -146,6 +146,7 @@ export const Prices: FC = ({}) => {
                 highlight={false}
                 shadow={false}
                 className="bg-transparent"
+                key={i}
               >
                 <motion.article
                   initial="hidden"
@@ -153,7 +154,6 @@ export const Prices: FC = ({}) => {
                   viewport={{ amount: "some", once: true }}
                   variants={animation}
                   custom={i}
-                  key={i}
                   className={`${s.Card} rounded-lg border-1 border-gray/10 bg-white dark:bg-black_secondary`}
                 >
                   <h5 className="text-black dark:text-white">{card.title}</h5>
