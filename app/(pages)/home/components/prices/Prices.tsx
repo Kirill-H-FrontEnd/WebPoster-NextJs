@@ -143,6 +143,7 @@ export const Prices: FC = ({}) => {
           <section className={s.Cards}>
             {DATA_CARDS.map((card, i) => (
               <Atropos
+                rotateTouch={false}
                 highlight={false}
                 shadow={false}
                 className="bg-transparent"

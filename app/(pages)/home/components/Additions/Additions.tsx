@@ -93,7 +93,12 @@ export const Additions: FC = ({}) => {
           </motion.section>
           <section className={s.Cards}>
             {DATA_CARDS.map((card, i) => (
-              <Atropos key={i} shadow={false} className="bg-transparent">
+              <Atropos
+                rotateTouch={false}
+                key={i}
+                shadow={false}
+                className="bg-transparent"
+              >
                 <motion.article
                   initial="hidden"
                   whileInView="visible"
