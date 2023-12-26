@@ -144,7 +144,7 @@ export const OurServices: FC = ({}) => {
             >
               {DATA_TABS.map((tab, i) => (
                 <Tab key={i} title={tab.title_tab}>
-                  <figure className=" dark:shadow-md rounded-md">
+                  <figure>
                     <Image
                       src={tab.image}
                       alt="Image"
