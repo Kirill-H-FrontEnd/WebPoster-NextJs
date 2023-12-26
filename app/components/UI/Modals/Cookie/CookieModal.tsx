@@ -4,7 +4,6 @@ import { FC, useEffect, useState } from "react";
 import s from "./CookieModal.module.scss";
 // NextUI
 import { Button } from "@nextui-org/react";
-type TCookieModal = {};
 
 export const CookieModal: FC = ({}) => {
   const [isClose, setClose] = useState(true);
