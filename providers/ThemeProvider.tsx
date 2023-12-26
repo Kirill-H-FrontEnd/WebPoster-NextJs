@@ -5,7 +5,7 @@ import { FC, createContext, useEffect, useState } from "react";
 interface IContext {
   children: React.ReactNode;
 }
-// useHeaderContext
+
 export const useThemeProvider = createContext<boolean | any>(false);
 const ThemeProvider: FC<IContext> = ({ children }) => {
   const [isSwitch, setSwitch] = useState<boolean>(true);
