@@ -8,7 +8,7 @@ interface IContext {
 
 export const useThemeProvider = createContext<boolean | any>(false);
 const ThemeProvider: FC<IContext> = ({ children }) => {
-  const [isSwitch, setSwitch] = useState<boolean>(true);
+  const [isSwitch, setSwitch] = useState<boolean>(false);
 
   useEffect(() => {
     const storedValue = window.localStorage.getItem("isSwitch");
