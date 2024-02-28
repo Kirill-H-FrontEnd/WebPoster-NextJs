@@ -34,6 +34,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="">
+      <meta
+        name="google-site-verification"
+        content="MqHzCAHKnBCfXtTVfEc8HaMyBmJCECpOcSf-kTLsOkA"
+      />
       <body className="bg-white dark:bg-black">
         <div id="app" style={font.style}>
           <ThemeProvider>
