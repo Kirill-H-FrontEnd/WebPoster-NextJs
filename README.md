@@ -1,8 +1,4 @@
-# [WebPoster | NextJs](https://my-web-site-roan-iota.vercel.app)
-
-![Logo](./public/icon.svg)
-
-<img src="./public/icon.svg" alt="Logo" width="20"/>
+# [WebPoster | NextJs](https://my-web-site-roan-iota.vercel.app) <img src="./public/icon.svg" alt="Logo" width="40"/>
 
 ```bash
 🚀 Website for a web application development company has more than 5 pages.
