@@ -8,6 +8,6 @@ This project is used by the following skills:
 
 **Technologies:** `React`, `NextJs`, `TypeScript`, `SCSS`
 
-**Libraries:** `Tailwind CSS`, `NextUI`
+**Libraries:** `Tailwind CSS`, `NextUI`, `React-Hot-Toast`, `Framer Motion`, `Atropos`
 
 ![Banner](./public/BannerWebPoster.png)
