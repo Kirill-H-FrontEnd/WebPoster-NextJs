@@ -1,4 +1,4 @@
-# [WebPoster | NextJs](https://my-web-site-roan-iota.vercel.app)
+# [WebPoster | NextJs](https://my-web-site-roan-iota.vercel.app) ![Logo](./public/icon.svg)
 
 ```bash
 Website for a web application development company has more than 5 pages.
