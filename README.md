@@ -4,7 +4,7 @@
 
 ```bash
 • Technologies: React, NextJs, TypeScript, SCSS
-&nbsp;
+
 • Libraries: Tailwind CSS, NextUI
 ```
 
