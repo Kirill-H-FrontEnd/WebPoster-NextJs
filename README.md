@@ -9,7 +9,7 @@ Welcome to the WebPoster project repository! We are here to show you an incredib
 
 ## 🛠 Technologies Used
 
-We've assembled quite the tech stack to bring Express to life:
+We've assembled quite the tech stack to bring WebPoster to life:
 
 - `React`
 - `NextJs`
