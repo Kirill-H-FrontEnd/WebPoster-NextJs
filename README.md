@@ -5,19 +5,19 @@ Welcome to the WebPoster project repository! We are here to show you an incredib
 ![Banner](./public/BannerWebPoster.png)
 
 ## 🤖 About WebPoster
-`📋 Website for a web application development company has more than 5 pages.`
+📋 Website for a web application development company has more than 5 pages.
 
 ## 🛠 Technologies Used
 
 We've assembled quite the tech stack to bring WebPoster to life:
 
-- `React`
-- `NextJs`
-- `TypeScript`
-- `SCSS`
+- [React](https://react.dev/)
+- [NextJs](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Scss](https://sasscss.org/)
 
 **Libraries:** `Tailwind CSS`, `NextUI`, `React-Hot-Toast`, `Framer Motion`, `Atropos`
-
+**Libraries:** [`TailwindCss`](https://tailwindcss.com/), [`NextUI`](https://nextui.org/),[`Framer Motion`](https://www.framer.com/motion/), [`Atropos`](https://atroposjs.com/),  [`Resend`](https://resend.com/), [`React-Hot-Toast`](https://react-hot-toast.com/)`
 ## 🚀 Getting Started
 
 - Clone the repository
