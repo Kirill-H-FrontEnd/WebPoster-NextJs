@@ -4,7 +4,7 @@
 
 ## 🤖 About WebPoster
 
-📋 Website for a web application development company has more than 5 pages.
+Website for a web application development company has more than 5 pages.
 
 ## 🛠 Technologies Used
 
