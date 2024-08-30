@@ -43,26 +43,28 @@ export const CookieModal: FC = ({}) => {
             </h5>
             <div className="grid sm:grid-cols-2-auto gap-3">
               <p>
-                <Button
-                  size="md"
-                  fullWidth
-                  radius="full"
-                  className="bg-white shadow"
-                  href={"https://github.com/Kirill-H-FrontEnd"}
-                >
-                  <FaGithubAlt size={22} className="text-[#22262A]" />
-                </Button>
+                <a target="_blank" href="https://github.com/Kirill-H-FrontEnd">
+                  <Button
+                    size="md"
+                    fullWidth
+                    radius="full"
+                    className="bg-white shadow"
+                  >
+                    <FaGithubAlt size={22} className="text-[#22262A]" />
+                  </Button>
+                </a>
               </p>
               <p>
-                <Button
-                  size="md"
-                  fullWidth
-                  radius="full"
-                  className="bg-white shadow"
-                  href={"https://www.linkedin.com/in/kirill-h"}
-                >
-                  <IoLogoLinkedin size={22} className="text-[#007BB5]" />
-                </Button>
+                <a target="_blank" href="https://www.linkedin.com/in/kirill-h">
+                  <Button
+                    size="md"
+                    fullWidth
+                    radius="full"
+                    className="bg-white shadow"
+                  >
+                    <IoLogoLinkedin size={22} className="text-[#007BB5]" />
+                  </Button>
+                </a>
               </p>
             </div>
             {/* <div>
