@@ -16,6 +16,8 @@ import NextUiProvider from "@/providers/NextUiProvider";
 // Font
 import { Inter } from "next/font/google";
 import { CookieModal } from "./components/UI/Modals/Cookie/CookieModal";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 const font = Inter({
   subsets: ["latin"],
@@ -39,7 +41,7 @@ export default function RootLayout({
         content="MqHzCAHKnBCfXtTVfEc8HaMyBmJCECpOcSf-kTLsOkA"
       />
       <body className="bg-white dark:bg-black">
-        <div id="app" style={font.style}>
+        <div id="app" style={GeistSans.style}>
           <ThemeProvider>
             <NextUiProvider>
               <ModalProvider>

@@ -3,8 +3,7 @@
     z-index: 200;
     visibility: hidden;
     opacity: 0;
-    transform: translate(0px, 200px);
-    animation: CookieModal 0.5s ease forwards 5s;
+    animation: CookieModal 0.5s ease forwards 2s;
     section {
         display: grid;
         grid-template-columns: 1fr;
