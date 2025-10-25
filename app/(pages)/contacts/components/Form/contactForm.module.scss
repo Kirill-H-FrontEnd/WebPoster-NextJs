@@ -1,0 +1,32 @@
+.contactForm {
+	padding: 100px 0px;
+	.contactForm__content {
+		display: grid;
+		align-items: center;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+		.contactForm__info {
+			div {
+				display: grid;
+				gap: 15px;
+				&:nth-of-type(2) {
+					div {
+						display: grid;
+						grid-template-columns: repeat(2, auto);
+						justify-content: start;
+						gap: 10px;
+					}
+				}
+			}
+		}
+		.contactForm__form {
+			display: grid;
+			gap: 15px;
+			.contactForm__name {
+				display: grid;
+				gap: 15px;
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+}

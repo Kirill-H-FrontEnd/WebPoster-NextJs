@@ -31,7 +31,7 @@ export const Hero: FC = ({}) => {
       className={`${s.Hero} bg-white dark:bg-black bg-[url('/bgAnim.svg')] bg-no-repeat bg-center bg-cover dark:bg-[url('/bgAnimDark.svg')] `}
     >
       <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-gray_light/20 dark:from-black dark:to-black_secondary/20"></div>
-      <div className="container">
+      <div className="container h-full">
         <section className={s.Wrapper}>
           <motion.section
             initial="hidden"
