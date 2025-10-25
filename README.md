@@ -47,8 +47,6 @@ git clone https://github.com/<your-org>/WebPoster-NextJs.git
 cd WebPoster-NextJs
 ```
 
-# Install dependencies
-
 ```bash
  npm install
 ```
