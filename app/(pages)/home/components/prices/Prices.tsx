@@ -18,84 +18,70 @@ export const Prices: FC = ({}) => {
     {
       title: "W-Start",
       price: "$300",
-      info: "This option is for people who do not have time for website development.",
+      icon: "🚀",
+      popular: false,
+      info: "For those who need a clean, fast website without the hassle.",
       features: [
-        {
-          text: "Basic design",
-        },
-        {
-          text: "2 pages",
-        },
-        {
-          text: "Adaptive view",
-        },
+        { text: "3 pages included" },
+        { text: "Basic design" },
+        { text: "Mobile responsive" },
+        { text: "2 revisions" },
       ],
     },
     {
       title: "W-Base",
       price: "$500",
-      info: "This option is for people who do not have time for website development.",
+      icon: "⚡",
+      popular: false,
+      info: "A step up with colour palettes, custom fonts and backgrounds.",
       features: [
-        {
-          text: "Simple design",
-        },
-        {
-          text: "3 pages",
-        },
-        {
-          text: "Adaptive view",
-        },
+        { text: "4 pages included" },
+        { text: "Custom colour palette" },
+        { text: "Mobile responsive" },
+        { text: "10% content discount" },
       ],
     },
     {
       title: "W-Growth",
       price: "$700",
-      info: "The best choice for those who need a website in a corporate style with the specifics of their business niche taken into account.",
+      icon: "🌟",
+      popular: true,
+      info: "Corporate style with gradients, advanced design and CSS animations.",
       features: [
-        {
-          text: "Advanced design",
-        },
-        {
-          text: "4 pages",
-        },
-        {
-          text: "Adaptive view",
-        },
+        { text: "5 pages included" },
+        { text: "Advanced design + gradients" },
+        { text: "CSS animations" },
+        { text: "15% content discount" },
       ],
     },
     {
       title: "W-Ultimate",
       price: "$1100",
-      info: "Exclusive design for those who want to stand out from competitors as much as possible.",
+      icon: "💎",
+      popular: false,
+      info: "Exclusive design with unique icons, images and JS animations.",
       features: [
-        {
-          text: "Exclusive design",
-        },
-        {
-          text: "6 pages",
-        },
-        {
-          text: "Adaptive view",
-        },
+        { text: "7 pages included" },
+        { text: "Exclusive icons & images" },
+        { text: "CSS + JS animations" },
+        { text: "20% content discount" },
       ],
     },
     {
       title: "E-commerce",
       price: "$850",
-      info: "This option is for people who are looking for a online store with easy management.",
+      icon: "🛒",
+      popular: false,
+      info: "Online store with easy management and e-commerce templates.",
       features: [
-        {
-          text: "Advanced design",
-        },
-        {
-          text: "4 pages + e-commerce pages",
-        },
-        {
-          text: "Adaptive view",
-        },
+        { text: "5+ pages included" },
+        { text: "E-commerce templates" },
+        { text: "CSS animations" },
+        { text: "15% content discount" },
       ],
     },
   ];
+
   const DATA_ITEMS_MARQUEE = [
     { img: "/Integrations/lg.svg" },
     { img: "/Integrations/lg.svg" },
@@ -104,20 +90,18 @@ export const Prices: FC = ({}) => {
     { img: "/Integrations/lg.svg" },
     { img: "/Integrations/lg.svg" },
   ];
-  // Animation
+
   const animation = {
-    hidden: {
-      y: 30,
-      opacity: 0,
-    },
+    hidden: { y: 30, opacity: 0 },
     visible: (custom: number) => ({
       y: 0,
       opacity: 1,
       transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
     }),
   };
+
   return (
-    <section className={`${s.Prices} bg-white dark:bg-black `}>
+    <section className={`${s.Prices} bg-white dark:bg-black`}>
       <div className="container">
         <section className={s.Wrapper}>
           <motion.section
@@ -137,12 +121,16 @@ export const Prices: FC = ({}) => {
               How Much Does a Website Cost?
             </motion.h2>
             <motion.p variants={animation} custom={3} className="text-gray">
-              We offer five pricing plans, depending on your needs.
+              Five plans to match every business need and budget.
             </motion.p>
           </motion.section>
+
           <section className={s.Cards}>
             {DATA_CARDS.map((card, i) => (
               <Atropos
+                rotateXMax={8}
+                rotateYMax={8}
+                activeOffset={25}
                 rotateTouch={false}
                 highlight={false}
                 shadow={false}
@@ -155,41 +143,64 @@ export const Prices: FC = ({}) => {
                   viewport={{ amount: "some", once: true }}
                   variants={animation}
                   custom={i}
-                  className={`${s.Card} rounded-lg border-1 border-gray/10 bg-white dark:bg-black_secondary`}
+                  className={`${s.Card} ${card.popular ? s.CardPopular : ""} bg-white dark:bg-black_secondary`}
                 >
-                  <h5 className="text-black dark:text-white">{card.title}</h5>
-                  <h4 className="text-transparent bg-clip-text bg-gradient-to-br from-blue to-green">
-                    {card.price}
-                  </h4>
-                  <p className="text-gray">{card.info}</p>
+                  {/* Top stripe */}
+                  <div className={s.CardStripe} />
+
+                  {/* Popular badge */}
+                  {card.popular && (
+                    <div className={s.PopularBadge}>
+                      <span>Most Popular</span>
+                    </div>
+                  )}
+
+                  {/* Header row: icon + title */}
+                  <div className={s.CardTop}>
+                    <span className={s.CardIcon}>{card.icon}</span>
+                    <h5 className="text-black dark:text-white">{card.title}</h5>
+                  </div>
+
+                  {/* Price */}
+                  <div className={s.PriceRow}>
+                    <span className={s.PriceFrom}>from</span>
+                    <h4 className="text-transparent bg-clip-text bg-gradient-to-br from-blue to-green">
+                      {card.price}
+                    </h4>
+                  </div>
+
+                  {/* Description */}
+                  <p className={`${s.CardInfo} text-gray`}>{card.info}</p>
+
+                  {/* Features */}
                   <ul className={s.Features}>
-                    {card.features.map((item, i) => (
-                      <li key={i}>
-                        <i>
-                          <Check
-                            strokeWidth={2}
-                            className="text-blue dark:text-green"
-                            size={18}
-                          />
-                        </i>
+                    {card.features.map((item, j) => (
+                      <li key={j}>
+                        <span className={s.CheckWrap}>
+                          <Check strokeWidth={3} size={10} />
+                        </span>
                         <p className="text-black dark:text-white">
                           {item.text}
                         </p>
                       </li>
                     ))}
                   </ul>
+
+                  {/* CTA */}
                   <ButtonGradient
                     radius="sm"
                     size="md"
                     value="Order a website"
+                    className={s.CardBtn}
                   />
                 </motion.article>
               </Atropos>
             ))}
           </section>
+
           <section className={s.Integrations}>
-            <h4 className="text-gray ">
-              The following integrations can be connected:{" "}
+            <h4 className="text-gray">
+              The following integrations can be connected:
             </h4>
             <Marquee autoFill className={s.marquee} speed={50}>
               <div className={s.introMarquee}>

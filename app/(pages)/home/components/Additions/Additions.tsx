@@ -13,60 +13,65 @@ import { FaUserSecret } from "react-icons/fa";
 import { IoIosCart } from "react-icons/io";
 import { BsCardImage } from "react-icons/bs";
 import { SiCampaignmonitor } from "react-icons/si";
+import { ArrowRight } from "lucide-react";
 
 export const Additions: FC = ({}) => {
   const DATA_CARDS = [
     {
       icon: <AiFillApple />,
-      title: "Corporate logo",
-      info: "Do you need to design a new logo or redo an old one? Our experienced designer will gladly take care of it.",
-      price: "$100 per 1 logo",
+      title: "Corporate Logo",
+      info: "Need a fresh logo or a redesign? Our experienced designer will craft something memorable for your brand.",
+      price: "$100",
+      unit: "per logo",
     },
     {
       icon: <AiFillCopy />,
       title: "Copywriting",
-      info: "We offer professional text content for your website. From copy for landing pages to expert blog articles.",
-      price: "$15 per 100 words",
+      info: "Professional text content for your website — from landing page copy to expert blog articles.",
+      price: "$15",
+      unit: "per 100 words",
     },
     {
       icon: <FaUserSecret />,
-      title: "Webmaster hours",
-      info: "Our technical specialist will help with any integrations and further improvements of your site.",
-      price: "$75 per 5 hours",
+      title: "Webmaster Hours",
+      info: "Our specialist handles integrations, tweaks and any further technical improvements to your site.",
+      price: "$75",
+      unit: "per 5 hours",
     },
     {
       icon: <IoIosCart />,
-      title: "Adding products",
-      info: "We will help you fill your site with products and add categories and meta tags for each product and section.",
-      price: "from $1 per product",
+      title: "Adding Products",
+      info: "We fill your store with products, categories and SEO meta tags — for every item and section.",
+      price: "from $1",
+      unit: "per product",
     },
     {
       icon: <BsCardImage />,
-      title: "Selecting images",
-      info: "We can carefully select high-quality and unhackneyed stock images and fill your site with them.",
-      price: "$5 per image",
+      title: "Image Selection",
+      info: "We carefully curate high-quality, unique stock images perfectly matched to your brand style.",
+      price: "$5",
+      unit: "per image",
     },
     {
       icon: <SiCampaignmonitor />,
-      title: "Website transfer",
-      info: "We will help you move to our platform, preserving your design and position in search engines as much as possible.",
-      price: "the price is negotiable",
+      title: "Website Transfer",
+      info: "We migrate your site to our platform, preserving your design and search engine positions.",
+      price: "Custom",
+      unit: "price",
     },
   ];
-  // Animation
+
   const animation = {
-    hidden: {
-      y: 30,
-      opacity: 0,
-    },
+    hidden: { y: 30, opacity: 0 },
     visible: (custom: number) => ({
       y: 0,
       opacity: 1,
-      transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
+      transition: { delay: custom * 0.08, duration: 0.3, ease: "easeOut" },
     }),
   };
+
   return (
-    <section className={`${s.Additions} bg-white dark:bg-black `}>
+    <section className={`${s.Additions} bg-white dark:bg-black`}>
       <div className="container">
         <section className={s.Wrapper}>
           <motion.section
@@ -86,17 +91,21 @@ export const Additions: FC = ({}) => {
               Additional Services
             </motion.h2>
             <motion.p variants={animation} custom={3} className="text-gray">
-              Weblium Studio can take over all the work on promotion, content
-              management, and site improvements that are not included in your
-              pricing plan.
+              We handle promotion, content management, and site improvements
+              beyond your plan — so you can focus on your business.
             </motion.p>
           </motion.section>
+
           <section className={s.Cards}>
             {DATA_CARDS.map((card, i) => (
               <Atropos
+                rotateXMax={8}
+                rotateYMax={8}
+                activeOffset={25}
                 rotateTouch={false}
-                key={i}
+                highlight={false}
                 shadow={false}
+                key={i}
                 className="bg-transparent"
               >
                 <motion.article
@@ -105,16 +114,36 @@ export const Additions: FC = ({}) => {
                   viewport={{ amount: "some", once: true }}
                   variants={animation}
                   custom={i}
-                  className={`${s.Card} shadow-sm border-1 border-gray/10 bg-gray_light/30 dark:bg-black_secondary`}
+                  className={`${s.Card} bg-white dark:bg-black_secondary`}
                 >
-                  <div className={s.icon}>
-                    <span className="bg-gradient-to-br from-blue to-green text-white">
-                      {card.icon}
-                    </span>
+                  {/* Left accent bar */}
+                  <div className={s.AccentBar} />
+
+                  <div className={s.CardInner}>
+                    {/* Icon */}
+                    <div className={s.IconWrap}>
+                      <span>{card.icon}</span>
+                    </div>
+
+                    {/* Content */}
+                    <div className={s.CardBody}>
+                      <h4 className="text-black dark:text-white">
+                        {card.title}
+                      </h4>
+                      <p className="text-gray">{card.info}</p>
+                    </div>
+
+                    {/* Footer */}
+                    <div className={s.CardFooter}>
+                      <div className={s.PriceBlock}>
+                        <span className={s.PriceValue}>{card.price}</span>
+                        <span className={s.PriceUnit}>{card.unit}</span>
+                      </div>
+                      <span className={s.Arrow}>
+                        <ArrowRight size={15} strokeWidth={2} />
+                      </span>
+                    </div>
                   </div>
-                  <h4 className="text-black dark:text-white">{card.title}</h4>
-                  <p className="text-gray">{card.info}</p>
-                  <p className={`${s.price} text-green`}>{card.price}</p>
                 </motion.article>
               </Atropos>
             ))}

@@ -1,74 +1,187 @@
 .Prices {
-    padding: 100px 0px;
+    padding: 100px 0;
+
     .Wrapper {
         .Header {
             text-align: center;
+
             h3 {
                 font-weight: 400;
             }
+
             h2 {
                 font-size: 35px;
-                font-weight: 600;
+                font-weight: 700;
+                margin: 6px 0 10px;
             }
+
             p {
                 font-weight: 400;
+                color: #6b7280;
             }
         }
+
         .Cards {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
             margin-top: 50px;
+            align-items: start;
+
             .Card {
-                padding: 40px 40px;
-                h5 {
-                    font-size: 20px;
-                    font-weight: 600;
+                position: relative;
+                border-radius: 20px;
+                padding: 0 0 28px;
+                border: 1px solid rgba(107, 114, 128, 0.22);
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                transition:
+                    transform 0.22s ease,
+                    box-shadow 0.22s ease;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.09);
                 }
-                h4 {
-                    font-size: 40px;
-                    font-weight: 600;
-                    margin: 5px 0px;
-                }
-                p {
-                    font-size: 14px;
-                    font-weight: 400;
-                }
-                .Features {
-                    display: grid;
-                    grid-row-gap: 15px;
-                    margin: 20px 0px;
-                    li {
-                        display: grid;
-                        grid-template-columns: repeat(2, auto);
-                        justify-content: start;
-                        align-items: center;
-                        grid-column-gap: 10px;
-                        p {
-                            font-weight: 600;
-                        }
+
+                &.CardPopular {
+                    border-color: rgba(66, 211, 146, 0.3);
+                    box-shadow: 0 4px 28px rgba(66, 211, 146, 0.12);
+
+                    .CardStripe {
+                        height: 5px;
                     }
                 }
-                button {
+
+                .CardStripe {
+                    height: 4px;
+                    width: 100%;
+                    background: linear-gradient(90deg, #2c74b3, #42d392);
+                    flex-shrink: 0;
+                }
+
+                .PopularBadge {
+                    position: absolute;
+                    top: 18px;
+                    right: 14px;
+
+                    span {
+                        display: inline-block;
+                        font-size: 10px;
+                        font-weight: 700;
+                        letter-spacing: 0.05em;
+                        text-transform: uppercase;
+                        color: #fff;
+                        background: linear-gradient(135deg, #2c74b3, #42d392);
+                        border-radius: 100px;
+                        padding: 3px 9px;
+                    }
+                }
+
+                .CardTop {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 20px 24px 0;
+
+                    h5 {
+                        font-size: 18px;
+                        font-weight: 700;
+                        line-height: 1;
+                    }
+                }
+
+                .CardIcon {
+                    font-size: 26px;
+                    line-height: 1;
+                    flex-shrink: 0;
+                }
+
+                .PriceRow {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 4px;
+                    padding: 14px 24px 0;
+
+                    h4 {
+                        font-size: 40px;
+                        font-weight: 800;
+                        line-height: 1;
+                    }
+
+                    .PriceFrom {
+                        font-size: 12px;
+                        color: #9ca3af;
+                        font-weight: 400;
+                    }
+                }
+
+                .CardInfo {
+                    font-size: 13px;
+                    font-weight: 400;
+                    line-height: 1.55;
+                    padding: 10px 24px 0;
+                }
+
+                .Features {
+                    display: grid;
+                    gap: 9px;
+                    margin: 16px 0 0;
+                    padding: 0 24px;
+                    list-style: none;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        gap: 9px;
+
+                        p {
+                            font-size: 13px;
+                            font-weight: 500;
+                        }
+                    }
+
+                    .CheckWrap {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 18px;
+                        height: 18px;
+                        border-radius: 50%;
+                        background: linear-gradient(135deg, rgba(44, 116, 179, 0.15), rgba(66, 211, 146, 0.15));
+                        color: #42d392;
+                        flex-shrink: 0;
+                    }
+                }
+
+                .CardBtn {
+                    width: calc(100% - 48px);
+                    margin: 20px 24px 0;
+
                     text-transform: capitalize;
                 }
             }
         }
+
         .Integrations {
             display: grid;
             text-align: center;
-            margin-top: 50px;
+            margin-top: 60px;
+
             h4 {
                 margin-bottom: 20px;
                 font-weight: 400;
                 font-size: 14px;
             }
+
             .marquee {
                 .introMarquee {
                     width: 100%;
                     display: grid;
                     overflow: hidden;
                     grid-template-columns: repeat(6, 1fr);
+
                     div {
                         margin-right: 100px;
                         pointer-events: none;
@@ -78,6 +191,7 @@
         }
     }
 }
+
 // ! Media
 @media screen and (width <= 1024px) {
     .Prices {
@@ -90,6 +204,7 @@
         }
     }
 }
+
 @media screen and (width <= 540px) {
     .Prices {
         .Wrapper {
@@ -98,16 +213,12 @@
                     font-size: 14px;
                 }
             }
-            .Cards {
-                button {
-                    width: 100%;
-                }
-            }
         }
     }
 }
+
 @media screen and (width <= 500px) {
     .Prices {
-        padding: 50px 0px;
+        padding: 50px 0;
     }
 }

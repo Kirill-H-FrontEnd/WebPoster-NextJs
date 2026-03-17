@@ -125,5 +125,136 @@
         }
     }
 }
+
+// Mobile Menu
+.MenuHeader {
+    position: relative;
+    overflow: hidden;
+    margin: 12px 0 8px;
+    padding: 18px 16px 16px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(44, 116, 179, 0.06) 0%, rgba(66, 211, 146, 0.06) 100%);
+    border: 1px solid rgba(66, 211, 146, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .MenuHeaderGradient {
+        pointer-events: none;
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(66, 211, 146, 0.18) 0%, transparent 70%);
+    }
+
+    .MenuHeaderIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(44, 116, 179, 0.12), rgba(66, 211, 146, 0.12));
+        border: 1px solid rgba(66, 211, 146, 0.2);
+        flex-shrink: 0;
+    }
+
+    .MenuHeaderContent {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .MenuHeaderTitle {
+        font-size: 17px;
+        font-weight: 600;
+        background: -webkit-linear-gradient(315deg, #2c74b3 25%, #42d392);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.2;
+    }
+
+    .MenuHeaderSub {
+        font-size: 11px;
+        font-weight: 400;
+        color: #9ca3af;
+        line-height: 1.4;
+    }
+}
+
+.Accordion {
+    padding: 0;
+}
+
+.AccordionTrigger {
+    padding: 12px 4px;
+}
+
+.MenuItemGrid {
+    display: grid;
+    gap: 10px;
+    padding-bottom: 8px;
+}
+
+.MenuLink {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #6b7280;
+    padding: 4px 6px;
+    border-radius: 8px;
+    transition:
+        color 0.15s ease,
+        background-color 0.15s ease;
+
+    &:hover {
+        color: #2c74b3;
+        background-color: rgba(44, 116, 179, 0.06);
+
+        .MenuLinkDot {
+            background: linear-gradient(135deg, #2c74b3, #42d392);
+            transform: scale(1.3);
+        }
+    }
+
+    .MenuLinkDot {
+        flex-shrink: 0;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: rgba(107, 114, 128, 0.3);
+        transition:
+            background 0.15s ease,
+            transform 0.15s ease;
+    }
+}
+
+.MenuLinkActive {
+    color: #2c74b3;
+
+    .MenuLinkDot {
+        background: linear-gradient(135deg, #2c74b3, #42d392);
+    }
+}
+
+.MenuFooter {
+    margin-top: 8px;
+    padding: 14px 4px;
+    border-top: 1px solid rgba(107, 114, 128, 0.15);
+    text-align: center;
+
+    span {
+        font-size: 12px;
+        color: #9ca3af;
+    }
+}
+
 // ! Media
 @import "Header.media";

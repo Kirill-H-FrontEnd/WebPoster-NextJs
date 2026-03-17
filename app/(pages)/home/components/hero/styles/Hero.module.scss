@@ -1,47 +1,82 @@
 .Hero {
-    // padding: 150px 0px 200px 0px;
-    height: 100dvh;
+    min-height: 100svh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     .Wrapper {
         display: grid;
-        height: 100%;
         place-items: center;
+        padding: 110px 0 80px;
+
         .Content {
             text-align: center;
-            h2 {
-                line-height: 1;
-                font-size: clamp(10px, 2vw, 19px);
-                font-weight: 400;
-                div {
-                    display: inline-block;
-                    span {
-                        background: -webkit-linear-gradient(315deg, #2c74b3 25%, #42d392);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+
+            .Badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: rgba(44, 116, 179, 0.07);
+                border: 1px solid rgba(66, 211, 146, 0.25);
+                border-radius: 100px;
+                padding: 6px 14px 6px 8px;
+                margin-bottom: 24px;
+
+                .BadgeDot {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: linear-gradient(135deg, #2c74b3, #42d392);
+                    flex-shrink: 0;
+                    box-shadow: 0 0 6px rgba(66, 211, 146, 0.5);
+                }
+
+                span {
+                    font-size: clamp(11px, 1.8vw, 13px);
+                    font-weight: 500;
+                    color: #6b7280;
+
+                    em {
+                        font-style: normal;
+                        background: linear-gradient(315deg, #2c74b3 25%, #42d392);
                         background-clip: text;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
+                        font-weight: 600;
                     }
                 }
             }
+
             h1 {
-                padding: 20px 0px;
-                line-height: 1;
-                font-size: clamp(30px, 10vw, 80px);
-                font-weight: 700;
+                line-height: 1.05;
+                font-size: clamp(36px, 10vw, 86px);
+                font-weight: 800;
+                letter-spacing: -0.03em;
+                margin-bottom: 20px;
             }
+
             p {
                 margin: 0 auto;
-                max-width: 700px;
+                max-width: 540px;
                 font-weight: 300;
                 font-size: clamp(14px, 2vw, 16px);
+                line-height: 1.7;
             }
+
             .Actions {
-                display: grid;
-                grid-template-columns: repeat(2, auto);
+                display: flex;
                 justify-content: center;
                 align-items: center;
-                grid-column-gap: 10px;
-                margin-top: 20px;
+                gap: 10px;
+                margin-top: 32px;
+                flex-wrap: wrap;
+
                 button {
                     &:nth-of-type(2) {
                         svg {
@@ -56,8 +91,72 @@
                     }
                 }
             }
+
+            .Stats {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                margin-top: 40px;
+                padding-top: 32px;
+                border-top: 1px solid rgba(107, 114, 128, 0.12);
+
+                .StatItem {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 2px;
+
+                    strong {
+                        font-size: clamp(18px, 3vw, 24px);
+                        font-weight: 700;
+                        background: linear-gradient(315deg, #2c74b3 25%, #42d392);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        line-height: 1;
+                    }
+
+                    span {
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: #9ca3af;
+                    }
+                }
+
+                .StatDivider {
+                    width: 1px;
+                    height: 32px;
+                    background: rgba(107, 114, 128, 0.15);
+                }
+            }
         }
     }
+
+    // Decorative orbs
+    .OrbBlue {
+        pointer-events: none;
+        position: absolute;
+        top: -80px;
+        left: -80px;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(44, 116, 179, 0.12) 0%, transparent 70%);
+        filter: blur(40px);
+    }
+
+    .OrbGreen {
+        pointer-events: none;
+        position: absolute;
+        bottom: 40px;
+        right: -60px;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(66, 211, 146, 0.1) 0%, transparent 70%);
+        filter: blur(40px);
+    }
 }
+
 // ! Media
 @import "Hero.media";

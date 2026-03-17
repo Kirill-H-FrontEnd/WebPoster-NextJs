@@ -1,4 +1,3 @@
-// React
 import { FC } from "react";
 // Styles
 import s from "./styles/OurServices.module.scss";
@@ -144,7 +143,7 @@ export const OurServices: FC = ({}) => {
             >
               {DATA_TABS.map((tab, i) => (
                 <Tab key={i} title={tab.title_tab}>
-                  <figure>
+                  <figure className={s.ImgWrap}>
                     <Image
                       src={tab.image}
                       alt="Image"
@@ -152,18 +151,24 @@ export const OurServices: FC = ({}) => {
                       height={320}
                     />
                   </figure>
-                  <article>
-                    <div>
+                  <article className={s.Article}>
+                    <div className={s.ArticleHeader}>
+                      <span className={s.ArticleTag}>Our service</span>
                       <h3>{tab.content.title}</h3>
                       <p className="text-gray">{tab.content.info}</p>
                     </div>
-                    <ul>
+                    <ul className={s.FeatureList}>
                       {tab.content.features.map((item, i) => (
-                        <li className="text-black dark:text-white" key={i}>
-                          <i className="text-blue dark:text-green">
-                            <Check strokeWidth={2} size={18} />
-                          </i>
-                          {item.value}
+                        <li
+                          key={i}
+                          className={`${s.FeatureItem} bg-gray_light/40 dark:bg-black/30`}
+                        >
+                          <span className={s.FeatureCheck}>
+                            <Check strokeWidth={3} size={11} />
+                          </span>
+                          <span className="text-black dark:text-white">
+                            {item.value}
+                          </span>
                         </li>
                       ))}
                     </ul>

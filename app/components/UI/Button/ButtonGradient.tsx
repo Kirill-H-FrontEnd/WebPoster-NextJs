@@ -1,14 +1,13 @@
 import { FC, useContext } from "react";
-// NextUI
 import { Button } from "@nextui-org/react";
-// Providers
 import { useModalContext } from "@/providers/ModalProvider";
-// Model
+
 type TButton = {
   value: string;
   className?: string;
   size: "sm" | "md" | "lg";
   radius: "sm" | "md" | "lg" | "none" | "full";
+  onClick?: () => void;
 };
 
 export const ButtonGradient: FC<TButton> = ({
@@ -16,14 +15,21 @@ export const ButtonGradient: FC<TButton> = ({
   className,
   size,
   radius,
+  onClick,
 }) => {
   const { onOpen } = useContext(useModalContext);
+
+  const handleClick = () => {
+    onOpen();
+    onClick?.();
+  };
+
   return (
     <Button
-      onClick={onOpen}
+      onClick={handleClick}
       size={size}
       radius={radius}
-      className={`${className}  shadow px-5 bg-gradient-to-br from-blue to-green text-white  font-medium `}
+      className={`${className} shadow px-5 bg-gradient-to-br from-blue to-green text-white font-medium`}
     >
       {value}
     </Button>

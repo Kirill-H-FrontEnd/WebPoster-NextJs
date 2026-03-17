@@ -1,75 +1,143 @@
 .OurServices {
     padding: 100px 0px;
+
     .Wrapper {
         .Header {
             max-width: 750px;
             margin: 0 auto;
             text-align: center;
+
             h3 {
                 font-weight: 400;
             }
+
             h2 {
                 font-size: 35px;
                 font-weight: 600;
             }
+
             p {
                 font-weight: 400;
             }
         }
+
         .Content {
             margin-top: 50px;
+
             .Tab {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 40px;
                 overflow: hidden;
-                figure {
-                    width: 100%;
-                    height: 100%;
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 15px;
-                        object-fit: contain;
-                    }
-                }
-                article {
-                    div {
-                        margin-bottom: 40px;
-                        h3 {
-                            font-size: 25px;
-                            font-weight: 600;
-                            margin-bottom: 10px;
-                            background: -webkit-linear-gradient(315deg, #2c74b3 25%, #42d392);
-                            background-clip: text;
-                            -webkit-background-clip: text;
-                            -webkit-text-fill-color: transparent;
-                        }
-                        p {
-                            font-size: 16px;
-                            font-weight: 400;
-                        }
-                    }
-                    ul {
-                        display: grid;
-                        grid-row-gap: 20px;
-                        li {
-                            display: grid;
-                            grid-template-columns: repeat(2, auto);
-                            justify-content: start;
-                            grid-column-gap: 10px;
-                            font-weight: 500;
-
-                            i {
-                                position: relative;
-                                top: 4px;
-                            }
-                        }
-                    }
-                }
             }
         }
     }
 }
+
+// Image wrapper
+.ImgWrap {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+        transition: transform 0.4s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}
+
+// Article
+.Article {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.ArticleHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.25;
+        background: -webkit-linear-gradient(315deg, #2c74b3 25%, #42d392);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    p {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.65;
+    }
+}
+
+.ArticleTag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #42d392;
+    background: rgba(66, 211, 146, 0.1);
+    border: 1px solid rgba(66, 211, 146, 0.25);
+    border-radius: 100px;
+    padding: 3px 10px;
+    width: fit-content;
+}
+
+// Feature list
+.FeatureList {
+    display: grid;
+    gap: 10px;
+    list-style: none;
+}
+
+.FeatureItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(107, 114, 128, 0.08);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.55;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+    &:hover {
+        border-color: rgba(66, 211, 146, 0.2);
+        box-shadow: 0 4px 16px rgba(66, 211, 146, 0.06);
+    }
+}
+
+.FeatureCheck {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2c74b3, #42d392);
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
 // ! Media
 @import "OurServices.media";

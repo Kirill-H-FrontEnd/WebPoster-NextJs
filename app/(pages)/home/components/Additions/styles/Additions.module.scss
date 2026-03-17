@@ -1,59 +1,170 @@
 .Additions {
-    padding: 100px 0px;
+    padding: 100px 0;
+
     .Wrapper {
         .Header {
             text-align: center;
             max-width: 750px;
             margin: 0 auto;
+
             h3 {
                 font-weight: 400;
             }
+
             h2 {
                 font-size: 35px;
-                font-weight: 600;
+                font-weight: 700;
+                margin: 6px 0 10px;
             }
+
             p {
                 font-weight: 400;
             }
         }
+
         .Cards {
             margin-top: 50px;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            justify-content: center;
-            grid-gap: 30px;
+            gap: 20px;
+
             .Card {
-                padding: 30px 20px;
                 position: relative;
-                border-radius: 8px;
-                text-align: center;
-                .icon {
-                    display: grid;
-                    justify-content: center;
-                    margin: 20px 0px;
-                    span {
-                        padding: 12px;
-                        font-size: 28px;
-                        border-radius: 50%;
+                border-radius: 18px;
+                border: 1px solid rgba(107, 114, 128, 0.12);
+                overflow: hidden;
+                transition:
+                    transform 0.22s ease,
+                    box-shadow 0.22s ease,
+                    border-color 0.22s ease;
+                cursor: default;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+                    border-color: rgba(66, 211, 146, 0.25);
+
+                    .AccentBar {
+                        height: 100%;
+                        opacity: 1;
+                    }
+
+                    .Arrow {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+
+                    .IconWrap span {
+                        transform: scale(1.1) rotate(-6deg);
                     }
                 }
-                h4 {
-                    font-size: 22px;
-                    font-weight: 600;
-                }
-                p {
-                    margin: 20px 0px 30px 0px;
-                    font-weight: 400;
-                }
-                .price {
-                    margin: 0;
 
-                    font-size: 18px;
-                    font-weight: 500;
+                .AccentBar {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 3px;
+                    height: 40%;
+                    background: linear-gradient(180deg, #2c74b3, #42d392);
+                    border-radius: 0 2px 2px 0;
+                    opacity: 0.6;
+                    transition:
+                        height 0.3s ease,
+                        opacity 0.3s ease;
+                }
+
+                .CardInner {
+                    padding: 28px 24px 24px 28px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+                    height: 100%;
+                }
+
+                .IconWrap {
+                    span {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 14px;
+                        font-size: 22px;
+                        background: linear-gradient(135deg, rgba(44, 116, 179, 0.12), rgba(66, 211, 146, 0.12));
+                        border: 1px solid rgba(66, 211, 146, 0.18);
+                        color: #2c74b3;
+                        transition: transform 0.22s ease;
+                    }
+                }
+
+                .CardBody {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    flex: 1;
+
+                    h4 {
+                        font-size: 18px;
+                        font-weight: 700;
+                        line-height: 1.2;
+                    }
+
+                    p {
+                        font-size: 13px;
+                        font-weight: 400;
+                        line-height: 1.6;
+                    }
+                }
+
+                .CardFooter {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-top: 14px;
+                    border-top: 1px solid rgba(107, 114, 128, 0.1);
+                }
+
+                .PriceBlock {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 5px;
+
+                    .PriceValue {
+                        font-size: 20px;
+                        font-weight: 700;
+                        background: linear-gradient(315deg, #2c74b3 25%, #42d392);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        line-height: 1;
+                    }
+
+                    .PriceUnit {
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: #9ca3af;
+                    }
+                }
+
+                .Arrow {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background: linear-gradient(135deg, rgba(44, 116, 179, 0.1), rgba(66, 211, 146, 0.1));
+                    color: #42d392;
+                    opacity: 0;
+                    transform: translateX(-6px);
+                    transition:
+                        opacity 0.22s ease,
+                        transform 0.22s ease;
                 }
             }
         }
     }
 }
+
 // ! Media
 @import "Additions.media";

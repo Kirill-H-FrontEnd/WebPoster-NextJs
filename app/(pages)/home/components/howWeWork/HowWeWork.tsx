@@ -1,4 +1,3 @@
-// React
 import { FC } from "react";
 // Animations
 import { motion } from "framer-motion";
@@ -93,8 +92,18 @@ export const HowWeWork: FC = ({}) => {
             >
               {DATA_LIST.map((item, i) => (
                 <motion.li variants={animationText} custom={i} key={i}>
-                  <h4 className="text-green">{item.title}</h4>
-                  <p className="text-gray">{item.text}</p>
+                  <div className={s.StepIndicator}>
+                    <div className={s.StepCircle}>
+                      <span>{i + 1}</span>
+                    </div>
+                    {i < DATA_LIST.length - 1 && <div className={s.StepLine} />}
+                  </div>
+                  <div className={s.StepContent}>
+                    <h4 className="text-black dark:text-white">
+                      {item.title.replace(/^\d+\.\s/, "")}
+                    </h4>
+                    <p className="text-gray">{item.text}</p>
+                  </div>
                 </motion.li>
               ))}
             </motion.ul>

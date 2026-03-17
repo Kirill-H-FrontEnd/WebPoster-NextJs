@@ -255,29 +255,79 @@ export const Header: FC = ({}) => {
             </nav>
             {/* ToggleMenu */}
             <NavbarMenu
-              className={`z-index2000 border-t-1 border-gray/10 bg-white dark:bg-black px-1`}
+              className={`z-index2000 border-t-1 border-gray/10 bg-white dark:bg-black`}
             >
+              {/* Menu header */}
+              <div className={s.MenuHeader}>
+                <div className={s.MenuHeaderGradient} />
+                <div className={s.MenuHeaderIcon}>
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                      fill="url(#menuIconGrad)"
+                      strokeWidth="0"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="menuIconGrad"
+                        x1="2"
+                        y1="2"
+                        x2="22"
+                        y2="22"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stopColor="#2C74B3" />
+                        <stop offset="1" stopColor="#42D392" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <div className={s.MenuHeaderContent}>
+                  <p className={s.MenuHeaderTitle} translate="no">
+                    WebPoster Studio
+                  </p>
+                  <p className={s.MenuHeaderSub}>
+                    Modern web solutions for your business
+                  </p>
+                </div>
+                <ButtonGradient
+                  radius="full"
+                  size="sm"
+                  value="Order A Website"
+                  onClick={() => setIsMenuOpen(false)}
+                />
+              </div>
+
               <Accordion isCompact className={s.Accordion}>
                 {DATA_TOGGLE_MENU_LINKS.map((item, i) => (
                   <AccordionItem
                     key={i}
                     title={item.title}
                     classNames={{
-                      title: "text-black dark:text-white ",
+                      title: `text-sm font-semibold text-black dark:text-white`,
+                      trigger: `${s.AccordionTrigger}`,
                     }}
                   >
-                    <NavbarMenuItem className="grid gap-3" key={`${item}-${i}`}>
+                    <NavbarMenuItem
+                      className={s.MenuItemGrid}
+                      key={`${item}-${i}`}
+                    >
                       {item.links.map((link, i) => (
                         <Link
                           onClick={() => setIsMenuOpen(false)}
-                          className={`relative text-sm  ml-2 pl-3 before:block before:absolute before:w-1 before:h-1 before:top-2 before:left-0 before:rounded-full ${
-                            pathName === link.href
-                              ? `text-blue dark:text-green before:bg-blue dark:before:bg-green `
-                              : "before:bg-gray/30 text-gray "
+                          className={`${s.MenuLink} ${
+                            pathName === link.href ? s.MenuLinkActive : ""
                           }`}
                           key={i}
                           href={link.href}
                         >
+                          <span className={s.MenuLinkDot} />
                           {link.value}
                         </Link>
                       ))}
@@ -286,10 +336,8 @@ export const Header: FC = ({}) => {
                 ))}
               </Accordion>
 
-              <div
-                className={`${s.Copyright} pt-2 mx-2 text-center text-gray text-sm mt-4  border-t-1 border-gray/10`}
-              >
-                © 2023 DevWorkshop Studio, Inc.
+              <div className={s.MenuFooter}>
+                <span>© 2023 DevWorkshop Studio, Inc.</span>
               </div>
             </NavbarMenu>
           </section>
