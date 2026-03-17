@@ -30,17 +30,20 @@ export const Header: FC = ({}) => {
   const [isBurgerActive, setBurgerActive] = useState(false);
   // Switch Theme
   const { isSwitch, handleSwitchClick } = useContext(useThemeProvider);
-  // Set class shadow to header
+  // Scroll: shadow + hide on scroll down
   const [isScroll, setScroll] = useState<boolean>(false);
+  const [isHidden, setHidden] = useState<boolean>(false);
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY != 0) {
-        setScroll(true);
-      } else {
-        setScroll(false);
-      }
-    });
-  }, [isScroll]);
+    let lastY = 0;
+    const handler = () => {
+      const y = window.scrollY;
+      setScroll(y !== 0);
+      setHidden(y > lastY && y > 80);
+      lastY = y;
+    };
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
   // Array navigation links
   const DATA_NAVBAR_LINKS = [
     {
@@ -180,13 +183,12 @@ export const Header: FC = ({}) => {
         isMenuOpen={isMenuOpen}
         isBlurred={false}
         maxWidth="full"
-        shouldHideOnScroll
         height={"3.7rem"}
         className={`${
           s.Header
-        } shadow-sm shadow-gray/20 dark:shadow-black_secondary/100 bg-white dark:bg-black transition-shadow text-black dark:text-white  ${
+        } shadow-sm shadow-gray/20 dark:shadow-black_secondary/100 bg-white dark:bg-black transition-all text-black dark:text-white ${
           pathName === "" ? "" : "shadow-sm"
-        }`}
+        } ${isHidden ? "-translate-y-full" : "translate-y-0"}`}
       >
         <div className="container">
           <section className={s.Wrapper}>

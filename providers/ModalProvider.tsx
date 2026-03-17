@@ -7,8 +7,21 @@ import { FC, createContext } from "react";
 interface IContext {
   children: React.ReactNode;
 }
-// useHeaderContext
-export const useModalContext = createContext<boolean | any>(false);
+
+interface IModalContext {
+  isOpen: boolean;
+  onOpen: () => void;
+  onOpenChange: () => void;
+  onClose: () => void;
+}
+
+export const useModalContext = createContext<IModalContext>({
+  isOpen: false,
+  onOpen: () => {},
+  onOpenChange: () => {},
+  onClose: () => {},
+});
+
 const ModalProvider: FC<IContext> = ({ children }) => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
   return (
