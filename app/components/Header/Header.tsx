@@ -178,12 +178,7 @@ export const Header: FC = ({}) => {
   return (
     <>
       <Banner />
-      <Navbar
-        onMenuOpenChange={setIsMenuOpen}
-        isMenuOpen={isMenuOpen}
-        isBlurred={false}
-        maxWidth="full"
-        height={"3.7rem"}
+      <header
         className={`${
           s.Header
         } shadow-sm shadow-gray/20 dark:shadow-black_secondary/100 bg-white dark:bg-black transition-all text-black dark:text-white ${
@@ -344,7 +339,7 @@ export const Header: FC = ({}) => {
             </NavbarMenu>
           </section>
         </div>
-      </Navbar>
+      </header>
     </>
   );
 };
