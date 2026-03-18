@@ -178,7 +178,7 @@ export const Header: FC = ({}) => {
   return (
     <>
       <Banner />
-      <header
+      <Navbar
         className={`${
           s.Header
         } shadow-sm shadow-gray/20 dark:shadow-black_secondary/100 bg-white dark:bg-black transition-all text-black dark:text-white ${
@@ -339,7 +339,7 @@ export const Header: FC = ({}) => {
             </NavbarMenu>
           </section>
         </div>
-      </header>
+      </Navbar>
     </>
   );
 };
