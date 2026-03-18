@@ -671,7 +671,7 @@ export const Header: FC = () => {
                 />
               </div>
 
-              <Accordion isCompact className={s.Accordion}>
+              {/* <Accordion isCompact className={s.Accordion}>
                 {DATA_TOGGLE_MENU_LINKS.map((item, i) => (
                   <AccordionItem
                     key={i}
@@ -698,7 +698,7 @@ export const Header: FC = () => {
                     </NavbarMenuItem>
                   </AccordionItem>
                 ))}
-              </Accordion>
+              </Accordion> */}
 
               <div className={s.MenuFooter}>
                 <span>© 2023 DevWorkshop Studio, Inc.</span>
