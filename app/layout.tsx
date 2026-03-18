@@ -3,7 +3,7 @@ import "./styles/globals.scss";
 // Next
 import type { Metadata } from "next";
 // Components
-// import { Header } from "./components/Header/Header";
+import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { BtnTop } from "./components/BtnTop/BtnTop";
 import { OrderModal } from "./components/UI/Modals/Order/OrderModal";
@@ -45,7 +45,7 @@ export default function RootLayout({
           <ThemeProvider>
             <NextUiProvider>
               <ModalProvider>
-                {/* <Header /> */}
+                <Header />
                 <main>{children}</main>
                 <Toaster position="top-center" />
                 <Footer />
