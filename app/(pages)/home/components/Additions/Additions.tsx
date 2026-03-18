@@ -98,54 +98,41 @@ export const Additions: FC = ({}) => {
 
           <section className={s.Cards}>
             {DATA_CARDS.map((card, i) => (
-              <Atropos
-                rotateXMax={8}
-                rotateYMax={8}
-                activeOffset={25}
-                rotateTouch={false}
-                highlight={false}
-                shadow={false}
-                key={i}
-                className="bg-transparent"
+              <motion.article
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: "some", once: true }}
+                variants={animation}
+                custom={i}
+                className={`${s.Card} bg-white dark:bg-black_secondary`}
               >
-                <motion.article
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ amount: "some", once: true }}
-                  variants={animation}
-                  custom={i}
-                  className={`${s.Card} bg-white dark:bg-black_secondary`}
-                >
-                  {/* Left accent bar */}
-                  <div className={s.AccentBar} />
+                {/* Left accent bar */}
+                <div className={s.AccentBar} />
 
-                  <div className={s.CardInner}>
-                    {/* Icon */}
-                    <div className={s.IconWrap}>
-                      <span>{card.icon}</span>
-                    </div>
-
-                    {/* Content */}
-                    <div className={s.CardBody}>
-                      <h4 className="text-black dark:text-white">
-                        {card.title}
-                      </h4>
-                      <p className="text-gray">{card.info}</p>
-                    </div>
-
-                    {/* Footer */}
-                    <div className={s.CardFooter}>
-                      <div className={s.PriceBlock}>
-                        <span className={s.PriceValue}>{card.price}</span>
-                        <span className={s.PriceUnit}>{card.unit}</span>
-                      </div>
-                      <span className={s.Arrow}>
-                        <ArrowRight size={15} strokeWidth={2} />
-                      </span>
-                    </div>
+                <div className={s.CardInner}>
+                  {/* Icon */}
+                  <div className={s.IconWrap}>
+                    <span>{card.icon}</span>
                   </div>
-                </motion.article>
-              </Atropos>
+
+                  {/* Content */}
+                  <div className={s.CardBody}>
+                    <h4 className="text-black dark:text-white">{card.title}</h4>
+                    <p className="text-gray">{card.info}</p>
+                  </div>
+
+                  {/* Footer */}
+                  <div className={s.CardFooter}>
+                    <div className={s.PriceBlock}>
+                      <span className={s.PriceValue}>{card.price}</span>
+                      <span className={s.PriceUnit}>{card.unit}</span>
+                    </div>
+                    <span className={s.Arrow}>
+                      <ArrowRight size={15} strokeWidth={2} />
+                    </span>
+                  </div>
+                </div>
+              </motion.article>
             ))}
           </section>
         </section>
