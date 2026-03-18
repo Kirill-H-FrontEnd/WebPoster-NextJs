@@ -127,74 +127,61 @@ export const Prices: FC = ({}) => {
 
           <section className={s.Cards}>
             {DATA_CARDS.map((card, i) => (
-              <Atropos
-                rotateXMax={8}
-                rotateYMax={8}
-                activeOffset={25}
-                rotateTouch={false}
-                highlight={false}
-                shadow={false}
-                className="bg-transparent"
-                key={i}
+              <motion.article
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: "some", once: true }}
+                variants={animation}
+                custom={i}
+                className={`${s.Card} ${card.popular ? s.CardPopular : ""} bg-white dark:bg-black_secondary`}
               >
-                <motion.article
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ amount: "some", once: true }}
-                  variants={animation}
-                  custom={i}
-                  className={`${s.Card} ${card.popular ? s.CardPopular : ""} bg-white dark:bg-black_secondary`}
-                >
-                  {/* Top stripe */}
-                  <div className={s.CardStripe} />
+                {/* Top stripe */}
+                <div className={s.CardStripe} />
 
-                  {/* Popular badge */}
-                  {card.popular && (
-                    <div className={s.PopularBadge}>
-                      <span>Most Popular</span>
-                    </div>
-                  )}
-
-                  {/* Header row: icon + title */}
-                  <div className={s.CardTop}>
-                    <span className={s.CardIcon}>{card.icon}</span>
-                    <h5 className="text-black dark:text-white">{card.title}</h5>
+                {/* Popular badge */}
+                {card.popular && (
+                  <div className={s.PopularBadge}>
+                    <span>Most Popular</span>
                   </div>
+                )}
 
-                  {/* Price */}
-                  <div className={s.PriceRow}>
-                    <span className={s.PriceFrom}>from</span>
-                    <h4 className="text-transparent bg-clip-text bg-gradient-to-br from-blue to-green">
-                      {card.price}
-                    </h4>
-                  </div>
+                {/* Header row: icon + title */}
+                <div className={s.CardTop}>
+                  <span className={s.CardIcon}>{card.icon}</span>
+                  <h5 className="text-black dark:text-white">{card.title}</h5>
+                </div>
 
-                  {/* Description */}
-                  <p className={`${s.CardInfo} text-gray`}>{card.info}</p>
+                {/* Price */}
+                <div className={s.PriceRow}>
+                  <span className={s.PriceFrom}>from</span>
+                  <h4 className="text-transparent bg-clip-text bg-gradient-to-br from-blue to-green">
+                    {card.price}
+                  </h4>
+                </div>
 
-                  {/* Features */}
-                  <ul className={s.Features}>
-                    {card.features.map((item, j) => (
-                      <li key={j}>
-                        <span className={s.CheckWrap}>
-                          <Check strokeWidth={3} size={10} />
-                        </span>
-                        <p className="text-black dark:text-white">
-                          {item.text}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Description */}
+                <p className={`${s.CardInfo} text-gray`}>{card.info}</p>
 
-                  {/* CTA */}
-                  <ButtonGradient
-                    radius="sm"
-                    size="md"
-                    value="Order a website"
-                    className={s.CardBtn}
-                  />
-                </motion.article>
-              </Atropos>
+                {/* Features */}
+                <ul className={s.Features}>
+                  {card.features.map((item, j) => (
+                    <li key={j}>
+                      <span className={s.CheckWrap}>
+                        <Check strokeWidth={3} size={10} />
+                      </span>
+                      <p className="text-black dark:text-white">{item.text}</p>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA */}
+                <ButtonGradient
+                  radius="sm"
+                  size="md"
+                  value="Order a website"
+                  className={s.CardBtn}
+                />
+              </motion.article>
             ))}
           </section>
 
